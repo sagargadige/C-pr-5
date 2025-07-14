@@ -24,37 +24,42 @@ int main()
         }
         printf("\n");
     }
-    int rno,cno,sum=0;
+    int rno,cno,rsum=0,csum=0;
+    printf("---------------------------------");
+    printf("Row sum");
+    printf("---------------------------------");
     do{
-        printf("Enter the Valid No(0 to %d):",row-1);
+        printf("\nEnter the Valid No(0 to %d):",row-1);
         scanf("%d",&rno);
         if(rno<0 || rno>=row)
         {
-            printf("Please Enter valid no again:");
+            printf("\nPlease Enter valid no again!");
         }
     }while(rno<0 || rno>=row);
     printf("\nElement of Row %d:",rno);
     for(int j=0;j<col;j++)
     {
         printf("%d ",a[rno][j]);
-        sum+=a[rno][j];
+        rsum+=a[rno][j];
     }
-    printf("\nSum of %d is:%d",rno,sum);
+    printf("\nSum of %d is:%d\n",rno,rsum);
+    printf("---------------------------------");
     printf("Column sum");
+    printf("---------------------------------");
     do{
-        printf("Enter the Valid No(0 to %d):",col-1);
+        printf("\nEnter the Valid No(0 to %d):",col-1);
         scanf("%d",&cno);
         if(cno<0 || cno>=col)
         {
-            printf("Please Enter valid no again:");
+            printf("\nPlease Enter valid no again!");
         }
     }while(cno<0 || cno>=col);
     printf("\nElement of col %d:",cno);
     for(int i=0;i<row;i++)
     {
         printf("%d ",a[i][cno]);
-        sum+=a[i][cno];
+        csum+=a[i][cno];
     }
-    printf("\nSum of %d is:%d",cno,sum);
+    printf("\nSum of %d is:%d",cno,csum);
     return 0;
 }
